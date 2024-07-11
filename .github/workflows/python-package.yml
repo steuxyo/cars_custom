@@ -26,7 +26,8 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        make install-pandora-mccnn
+        python -m pip install --upgrade pip
+        pip install .[dev,docs,notebook,pandora_mccnn]
     - name: Unit Tests
       run: |
-        make test-ci
+        pytest -m "unit_tests" --durations=0 --log-date-format="%Y-%m-%d %H:%M:%S" --log-format="%(asctime)s [%(levelname)8s] (%(filename)s:%(lineno)s) : %(message)s"  -o log_cli=true -o log_cli_level=INFO --junitxml=pytest-report.xml --cov-config=.coveragerc --cov-report xml --cov
