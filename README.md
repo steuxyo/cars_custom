@@ -19,6 +19,7 @@
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)](CONTRIBUTING.md)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0/)
 [![Documentation](https://readthedocs.org/projects/cars/badge/?version=latest)](https://cars.readthedocs.io/?badge=latest)
+[![Github Action](https://github.com/github/docs/actions/workflows/main.yml/badge.svg?branch=feature-1)](https://github.com/steuxyo/cars_custom/actions)
 
 <p>
   <a href="#overview">Overview</a> •
