@@ -28,6 +28,16 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install .[dev,docs,notebook,pandora_mccnn]
+        pip list
     - name: Unit Tests
       run: |
-        pytest -m "unit_tests" --durations=0 --log-date-format="%Y-%m-%d %H:%M:%S" --log-format="%(asctime)s [%(levelname)8s] (%(filename)s:%(lineno)s) : %(message)s"  -o log_cli=true -o log_cli_level=INFO --junitxml=pytest-report.xml --cov-config=.coveragerc --cov-report xml --cov
+        make test-unit
+    - name: Lint Tests
+      run: |
+        make lint
+    - name: Notebooks Tests
+      run: |
+        make test-notebook 
+    - name: End2end Tests
+      run: |
+        make test-end2end
