@@ -102,7 +102,7 @@ def test_check_full_conf(conf):
     _ = Orchestrator(conf)
 
 
-@pytest.mark.unit_tests
+@pytest.mark.slurm_cluster_tests
 @pytest.mark.parametrize(
     "conf",
     [
