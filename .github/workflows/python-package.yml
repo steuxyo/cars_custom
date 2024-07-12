@@ -31,6 +31,12 @@ jobs:
         pip install --upgrade numba
         pip install .[dev,docs,notebook,pandora_mccnn]
         pip list
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+    - name: Create source distribution
+      if: github.event_name == 'push'
+      run: |
+        python -m build --sdist
     - name: Lint Tests
       run: |
         echo "Lint test"
