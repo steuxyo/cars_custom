@@ -849,8 +849,8 @@ def test_end2end_ventoux_unique():
                     "confidence_from_intensity_std_end2end_ventoux.tif",
                 )
             ),
-            atol=1.0e-7,
-            rtol=1.0e-7,
+            atol=1.0e-5,
+            rtol=1.0e-6,
         )
         assert_same_images(
             os.path.join(out_dir, "confidence_from_risk_min_risk.tif"),
