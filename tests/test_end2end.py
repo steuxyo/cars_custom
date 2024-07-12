@@ -3615,7 +3615,7 @@ def test_end2end_paca_with_mask():
                 os.path.join(ref_output_dir, "clr_end2end_paca.tif")
             ),
             rtol=0.0002,
-            atol=1.0e-6,,
+            atol=1.0e-6,
         )
         assert_same_images(
             os.path.join(out_dir, "msk.tif"),
