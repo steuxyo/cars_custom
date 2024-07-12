@@ -85,6 +85,7 @@ conf_slurm_dask = {
     "qos": None,
 }
 
+
 @pytest.mark.unit_tests
 @pytest.mark.parametrize(
     "conf",
