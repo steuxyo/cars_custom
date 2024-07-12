@@ -31,16 +31,16 @@ jobs:
         pip install --upgrade numba
         pip install .[dev,docs,notebook,pandora_mccnn]
         pip list
-    - name: Unit Tests
-      run: |
-        pytest -m "unit_tests" -o log_cli=true -o log_cli_level=INFO
     - name: Lint Tests
       run: |
         echo "Lint test"
-        #isort --check cars tests
-        #black --check cars tests
-        #flake8 cars tests
-        #pylint cars tests --rcfile=.pylintrc --output-format=parseable | tee pylint-report.txt # pipefail to propagate pylint exit code in bash
+        isort --check cars tests
+        black --check cars tests
+        flake8 cars tests
+        pylint cars tests --rcfile=.pylintrc --output-format=parseable | tee pylint-report.txt # pipefail to propagate pylint exit code in bash
+    - name: Unit Tests
+      run: |
+        pytest -m "unit_tests" -o log_cli=true -o log_cli_level=INFO
     - name: Notebooks Tests
       run: |
         pytest -m "notebook_tests" -o log_cli=true -o log_cli_level=INFO
